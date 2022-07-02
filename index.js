@@ -20,7 +20,7 @@ app.post('/tasks', (req, res) => {
 
     res.json({
         'status': 'success',
-        'massage' : 'task added successfully',
+        'massage': 'task added successfully',
         'data': task
     })
 })
@@ -51,7 +51,7 @@ app.post('/delete_tasks', (req, res) => {
     tasks = []
     res.json({
         'status': 'success',
-        'massage' : 'successfully deleted all task',
+        'massage': 'successfully deleted all task',
         'data': tasks
     })
 })
@@ -69,7 +69,7 @@ app.post('/delete_task', (req, res) => {
     tasks.splice(index, 1)
     res.json({
         'status': 'success',
-        'massage' : 'successfully deleted task with id : ${id}',
+        'massage': `successfully deleted task with id : ${id}`,
         'data': tasks
     })
 
@@ -77,7 +77,7 @@ app.post('/delete_task', (req, res) => {
 })
 //update task
 
-app.post('/update_task',(req,res)=>{
+app.post('/update_task', (req, res) => {
     const id = req.body.id;
     const title = req.body.title;
     const description = req.body.description;
@@ -92,15 +92,15 @@ app.post('/update_task',(req,res)=>{
         }
     })
     tasks[index] = {
-        id : id,
-        title : title,
-        description : description,
-        priority : priority,
-        emoji : emoji
+        id: id,
+        title: title,
+        description: description,
+        priority: priority,
+        emoji: emoji
     }
     res.json({
-        'status' : 'success',
-        'massage' : ' Task updated successfully ',
+        'status': 'success',
+        'massage': ' Task updated successfully ',
         'data': tasks
     })
 })
