@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
-const PORT = 5000;
+require('dotenv').config()
+const PORT =  process.env.PORT || 5000;
 app.use(express.json())
 
 //temp database
 let tasks = []
 
-const DB = "mera Database"
+const DB = process.env.MONGODB_URI;
+console.log(DB);
 
 //create a Task
 app.post('/tasks', (req, res) => {
